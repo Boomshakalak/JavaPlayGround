@@ -9,18 +9,20 @@ import java.util.List;
  * @author zhongya
  */
 
-public class RandomIntegerGenerator {
+public class IntegerGenerator
+{
     private int lower_bound;
     private int upper_bound;
-    private static RandomIntegerGenerator DEFAULT_GENERATOR =
-            new RandomIntegerGenerator(-1000 , 1001);
-    public RandomIntegerGenerator()
+    public static final int[] TEN = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private static IntegerGenerator DEFAULT_GENERATOR =
+            new IntegerGenerator(-1000 , 1001);
+    public IntegerGenerator()
     {
         lower_bound = -1000;
         upper_bound = 1001;
     }
 
-    public RandomIntegerGenerator(int lower_bound, int upper_bound)
+    public IntegerGenerator(int lower_bound, int upper_bound)
     {
         this.lower_bound = lower_bound;
         this.upper_bound = upper_bound;
@@ -84,7 +86,7 @@ public class RandomIntegerGenerator {
 
     public static List<Integer> generateList(int lower_bound, int upper_bound, int size)
     {
-        RandomIntegerGenerator rig = new RandomIntegerGenerator(lower_bound, upper_bound);
+        IntegerGenerator rig = new IntegerGenerator(lower_bound, upper_bound);
         return rig.getList(size);
     }
 
@@ -95,7 +97,7 @@ public class RandomIntegerGenerator {
 
     public static int[] generateArray(int lower_bound, int upper_bound, int size)
     {
-        RandomIntegerGenerator rig = new RandomIntegerGenerator(lower_bound, upper_bound);
+        IntegerGenerator rig = new IntegerGenerator(lower_bound, upper_bound);
         return rig.getArray(size);
     }
 

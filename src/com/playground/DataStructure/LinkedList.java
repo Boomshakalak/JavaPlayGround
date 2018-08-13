@@ -48,7 +48,7 @@ public class LinkedList {
     {
         if (n == null)
         {
-            throw new NullPointerException("Cannot add a nullptr at the beginning of a linked list");
+            throw new NullPointerException("LinkedList::AddFromHead : Cannot add a nullptr at the beginning of a linked list");
         }
         size++;
         n.next = head;
@@ -58,6 +58,16 @@ public class LinkedList {
     public void addFromHead(int n)
     {
         addFromHead(new ListNode(n));
+    }
+
+    public ListNode getHead()
+    {
+        return head;
+    }
+
+    public ListNode getTail()
+    {
+        return tail;
     }
 
     public int size()

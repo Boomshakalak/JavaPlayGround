@@ -3,15 +3,33 @@ package com.example;
 import com.playground.Algorithm.Sort;
 import com.playground.DataStructure.LinkedList;
 import com.playground.DataStructure.ListNode;
-import com.playground.TestGenerator.RandomIntegerGenerator;
+import com.playground.DataStructure.Tree;
+import com.playground.DataStructure.TreeNode;
+import com.playground.TestGenerator.IntegerGenerator;
+import com.playground.TestGenerator.TreeGenerator;
 import com.util.Print;
+
 
 public class usingInternalLibrary {
 
     public static void selectionSortArray()
     {
-        int[] test = RandomIntegerGenerator.generateArray(15);
+        int[] test = IntegerGenerator.generateArray(15);
         Sort.selectionSort(test);
+        Print.PrintArray(test);
+    }
+
+    public static void mergeSortArray()
+    {
+        int[] test = IntegerGenerator.generateArray(15);
+        Sort.mergeSort(test);
+        Print.PrintArray(test);
+    }
+
+    public static void quickSortArray()
+    {
+        int[] test = IntegerGenerator.generateArray(15);
+        Sort.quickSort(test);
         Print.PrintArray(test);
     }
 
@@ -29,5 +47,16 @@ public class usingInternalLibrary {
         System.out.println(l);
         l.add(node);
         System.out.println(l);
+    }
+
+    public static void testHashMap()
+    {
+    }
+
+    public static void testTree()
+    {
+        TreeNode root = TreeGenerator.generateBSTFromArray(IntegerGenerator.TEN);
+        System.out.println(root.val);
+        System.out.println(Tree.preorderTraversal(root));
     }
 }
