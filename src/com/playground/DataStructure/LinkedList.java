@@ -1,6 +1,7 @@
 package com.playground.DataStructure;
 
 import java.util.HashSet;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Set;
  * @author zhongya
  */
 
-public class LinkedList {
+public class LinkedList implements Stack, Queue {
     private ListNode head;
     private ListNode tail;
     private int size;
@@ -70,9 +71,56 @@ public class LinkedList {
         return tail;
     }
 
+    @Override
+    public void enqueue(int k)
+    {
+        add(k);
+    }
+
+    @Override
+    public int dequeue()
+    {
+        int val = head.val;
+        head = head.next;
+        size--;
+        return val;
+    }
+
+    @Override
     public int size()
     {
         return size;
+    }
+
+    @Override
+    public int peek()
+    {
+        if (isEmpty())
+        {
+            throw new NoSuchElementException("Cannot peek an empty container");
+        }
+        return head.val;
+    }
+
+    @Override
+    public int pop()
+    {
+        int val = head.val;
+        head = head.next;
+        size--;
+        return val;
+    }
+
+    @Override
+    public void push(int k)
+    {
+        addFromHead(k);
+    }
+
+    @Override
+    public boolean isEmpty()
+    {
+        return size() == 0;
     }
 
     @Override

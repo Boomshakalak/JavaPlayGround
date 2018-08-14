@@ -26,6 +26,12 @@ public class HashMap<K, V> {
         {
             this.val = val;
         }
+
+        @Override
+        public String toString()
+        {
+            return "[" + this.getKey().toString() + " : " + this.getVal().toString() + "]";
+        }
     }
     public static final double DEFAULT_LOAD_FACTOR = 0.75;
     public static final int DEFAULT_CAPACITY = 16;
@@ -59,6 +65,11 @@ public class HashMap<K, V> {
     public int size()
     {
         return size;
+    }
+
+    public int capacity()
+    {
+        return nodes.length;
     }
 
     public boolean isEmpty()
@@ -163,6 +174,7 @@ public class HashMap<K, V> {
         HashNode<K,V>[] newNodeArray = (HashNode<K,V>[])new HashNode[nodes.length * REHASH_FACTOR];
         HashNode<K, V>[] tmp = nodes;
         nodes = newNodeArray;
+        size = 0;
         for (HashNode<K, V> node : tmp)
         {
             while (node != null)
@@ -173,4 +185,48 @@ public class HashMap<K, V> {
         }
     }
 
+    public V remove(K key)
+    {
+        int bucket = getBucket(key);
+        HashNode<K, V> node = nodes[bucket];
+        if (node == null) return null;
+        HashNode<K, V> prev = null;
+        while (node != null)
+        {
+            if (equalKey(node.getKey(), key))
+            {
+                size--;
+                if (prev != null)
+                {
+                    prev.next = node.next;
+                    return node.getVal();
+                }
+                else
+                {
+                    node = null;
+                }
+            }
+            prev = node;
+            node = node.next;
+        }
+        return null;
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder();
+        for (HashNode<K, V> node : nodes)
+        {
+            if (node == null) continue;
+
+            while (node != null)
+            {
+                sb.append(node.toString() + " ");
+                node = node.next;
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 }

@@ -20,6 +20,5 @@ public class Print {
 
     public static void PrintTree(TreeNode root)
     {
-
     }
 }
