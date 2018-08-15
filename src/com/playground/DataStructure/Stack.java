@@ -6,5 +6,8 @@ public interface Stack
     int peek();
     int pop();
     void push(int k);
-    boolean isEmpty();
+    default boolean isEmpty()
+    {
+        return size() == 0;
+    }
 }
