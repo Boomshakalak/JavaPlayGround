@@ -8,6 +8,7 @@ import com.playground.TestGenerator.TreeGenerator;
 import com.util.Print;
 
 
+
 public class usingInternalLibrary {
 
     public static void selectionSortArray()
@@ -94,6 +95,28 @@ public class usingInternalLibrary {
         while(!st.isEmpty())
         {
             System.out.print(" " + st.pop());
+        }
+        System.out.println();
+    }
+
+    public static void testHeap()
+    {
+        final int[] arr = IntegerGenerator.generateArray(30);
+        Print.PrintArray(arr);
+        myHeap hp = new myHeap(arr);
+        while(!hp.isEmpty())
+        {
+            System.out.print(hp.poll() + " ");
+        }
+        System.out.println();
+        hp = new myHeap();
+        for (int k : arr)
+        {
+            hp.offer(k);
+        }
+        while(!hp.isEmpty())
+        {
+            System.out.print(hp.poll() + " ");
         }
         System.out.println();
     }

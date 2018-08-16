@@ -9,7 +9,7 @@ import java.util.Set;
  * @author zhongya
  */
 
-public class LinkedList implements Stack, Queue {
+public class LinkedList implements Stack, Queue, Deque {
     private ListNode head;
     private ListNode tail;
     private int size;
@@ -87,6 +87,50 @@ public class LinkedList implements Stack, Queue {
     }
 
     @Override
+    public int peekFirst()
+    {
+        if (isEmpty())
+        {
+            throw new NoSuchElementException("Cannot peek an empty container");
+        }
+        return head.val;
+    }
+
+    @Override
+    public int peekLast()
+    {
+        if (isEmpty())
+        {
+            throw new NoSuchElementException("Cannot peek an empty container");
+        }
+        return tail.val;
+    }
+
+    @Override
+    public int pollFirst()
+    {
+        return dequeue();
+    }
+
+    @Override
+    public int pollLast()
+    {
+        return pop();
+    }
+
+    @Override
+    public void offerFirst(int k)
+    {
+        addFromHead(k);
+    }
+
+    @Override
+    public void offerLast(int k)
+    {
+        add(k);
+    }
+
+    @Override
     public int size()
     {
         return size;
@@ -105,6 +149,10 @@ public class LinkedList implements Stack, Queue {
     @Override
     public int pop()
     {
+        if (isEmpty())
+        {
+            throw new NoSuchElementException("Cannot peek an empty container");
+        }
         int val = head.val;
         head = head.next;
         size--;
