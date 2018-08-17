@@ -1,5 +1,10 @@
 package com.playground.DataStructure;
 
+/**
+ * Interface of Heap
+ * @author zhongya
+ */
+
 public interface Heap
 {
     int peek();

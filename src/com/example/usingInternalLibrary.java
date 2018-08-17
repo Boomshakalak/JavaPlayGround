@@ -5,7 +5,7 @@ import com.playground.Algorithm.Sort;
 import com.playground.DataStructure.*;
 import com.playground.TestGenerator.IntegerGenerator;
 import com.playground.TestGenerator.TreeGenerator;
-import com.util.Print;
+import com.util.print;
 
 
 
@@ -15,21 +15,21 @@ public class usingInternalLibrary {
     {
         int[] test = IntegerGenerator.generateArray(15);
         Sort.selectionSort(test);
-        Print.PrintArray(test);
+        print.printArray(test);
     }
 
     public static void mergeSortArray()
     {
         int[] test = IntegerGenerator.generateArray(15);
         Sort.mergeSort(test);
-        Print.PrintArray(test);
+        print.printArray(test);
     }
 
     public static void quickSortArray()
     {
         int[] test = IntegerGenerator.generateArray(15);
         Sort.quickSort(test);
-        Print.PrintArray(test);
+        print.printArray(test);
     }
 
     public static void testLinkedList()
@@ -64,7 +64,7 @@ public class usingInternalLibrary {
 
     public static void testTree()
     {
-        TreeNode root = TreeGenerator.generateBSTFromArray(IntegerGenerator.TEN);
+        TreeNode root = TreeGenerator.generateBalanceTreeFromArray(IntegerGenerator.TEN);
         System.out.println(Tree.preorderTraversal(root));
         System.out.println(Tree.inorderTraversal(root)); // This should have a sorted result
         System.out.println(Tree.postOrderTraversal(root));
@@ -74,7 +74,7 @@ public class usingInternalLibrary {
     {
         int[] arr = IntegerGenerator.generateArray(20);
         Sort.quickSort(arr);
-        Print.PrintArray(arr);
+        print.printArray(arr);
         int[] myArr = {1,3,4,7,7,7,7,9,12,16};
         System.out.println("find first 7:" + BinarySearch.findFirst(myArr, 7));
         System.out.println("find last 7 :" + BinarySearch.findLast(myArr, 7));
@@ -102,7 +102,7 @@ public class usingInternalLibrary {
     public static void testHeap()
     {
         final int[] arr = IntegerGenerator.generateArray(30);
-        Print.PrintArray(arr);
+        print.printArray(arr);
         myHeap hp = new myHeap(arr);
         while(!hp.isEmpty())
         {

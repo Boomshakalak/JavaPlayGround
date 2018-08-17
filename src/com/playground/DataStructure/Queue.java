@@ -1,5 +1,10 @@
 package com.playground.DataStructure;
 
+/**
+ * Interface of Queue
+ * @author zhongya
+ */
+
 public interface Queue
 {
     void enqueue(int k);

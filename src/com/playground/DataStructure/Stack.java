@@ -1,5 +1,10 @@
 package com.playground.DataStructure;
 
+/**
+ * Inteface of stack
+ * @author zhongya
+ */
+
 public interface Stack
 {
     int size();

@@ -1,8 +1,13 @@
 package com.playground.DataStructure;
 
-import com.util.Print;
+import com.util.print;
 
 import java.util.NoSuchElementException;
+
+/**
+ * Implement a heap using a int array
+ * @author zhongya
+ */
 
 public class myHeap implements Heap
 {
@@ -127,6 +132,6 @@ public class myHeap implements Heap
 
     public void printHeapArray()
     {
-        Print.PrintArray(array);
+        print.printArray(array);
     }
 }

@@ -6,9 +6,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Print {
+public class print
+{
 
-    public static void PrintArray(int[] array)
+    public static void printArray(int[] array)
     {
         if (array == null || array.length == 0)
         {
@@ -18,7 +19,7 @@ public class Print {
         System.out.println(integers);
     }
 
-    public static void PrintTree(TreeNode root)
+    public static void printTree(TreeNode root)
     {
     }
 }

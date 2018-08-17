@@ -7,7 +7,30 @@ import java.util.List;
 
 public class Tree
 {
-    private TreeNode root;
+    protected TreeNode root;
+
+    public Tree(TreeNode root)
+    {
+        this.root = deepCopyTree(root);
+
+    }
+
+    public TreeNode getRoot()
+    {
+        return this.root;
+    }
+
+    public static TreeNode deepCopyTree(TreeNode root)
+    {
+        if (root == null) return null;
+        else
+        {
+            TreeNode node = new TreeNode(root.val);
+            node.left = deepCopyTree(root.left);
+            node.right = deepCopyTree(root.right);
+            return node;
+        }
+    }
 
     public static List<Integer> preorderTraversal(TreeNode root)
     {
