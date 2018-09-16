@@ -5,6 +5,7 @@ import com.playground.DataStructure.TreeNode;
 
 /**
  * Offer some functionality to generate some trees
+ * @author zhongya
  */
 
 public class TreeGenerator
@@ -12,7 +13,7 @@ public class TreeGenerator
     /**
      * Generate a binary search tree from a
      * @param array
-     * @return
+     * @return the root of the BST
      */
     public static TreeNode generateBSTFromArray(int[] array)
     {

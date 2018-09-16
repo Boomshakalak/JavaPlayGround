@@ -1,32 +1,36 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Solution
 {
-    public List<List<Integer>> threeSum(int[] nums) {
-        Arrays.sort(nums);
-        List<List<Integer>> res = new ArrayList<>();
-        for (int i = 0 ; i < nums.length - 2; i++)
+    public int sol(int k, String str) {
+        Map<Character, Integer> map = new HashMap<>();
+        int count = 0;
+        int i = 0;
+        int j = 0;
+        while ( j < str.length())
         {
-            if ( i > 0 && nums[i] == nums[i - 1]) continue;
-            int j = i + 1;
-            int k = nums.length - 1;
-            while (j < k)
+            while (map.size() < k)
             {
-                int cur = nums[i] + nums[j] + nums[k];
-                if (cur < 0) j++;
-                else if (cur > 0) k--;
-                else
-                {
-                    res.add(Arrays.asList(nums[i], nums[j], nums[k]));
-                    while (j < k && nums[j + 1] == nums[j]) j++;
-                    while(j < k && nums[k - 1] == nums[k]) k--;
-                    j++;
-                    k--;
-                }
+                char cur = str.charAt(j++);
+                map.put(cur, map.getOrDefault(cur, 0) + 1);
+            }
+            while (map.size() >= k)
+            {
+                if (map.size() == k) count++;
+                char cur = str.charAt(i++);
+                map.put(cur, map.get(cur) - 1);
+                if (map.get(cur) == 0) map.remove(cur);
             }
         }
-        return res;
+        return count;
+    }
+
+    public static void main(String[] args)
+    {
+        String a = "";
+        return;
     }
 }
+
+

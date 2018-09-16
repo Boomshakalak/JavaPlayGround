@@ -81,7 +81,8 @@ public class Sort {
         while (cur_idx <= j)
         {
             int cur = array[cur_idx];
-            if (cur < pivot) {
+            if (cur < pivot)
+            {
                 cur_idx++;
             }
             else

@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * BST that support self balance (a.k.a AVL tree)
  * IMPORTANT: Every number in this tree should be unique
+ * @author zhongya
  */
 
 public class BinarySearchTree
@@ -142,8 +143,8 @@ public class BinarySearchTree
         {
             if ((root.left == null) || (root.right == null))
             {
-                BSTNode temp = null;
-                if (temp == root.left)
+                BSTNode temp;
+                if (root.left == null)
                     temp = root.right;
                 else
                     temp = root.left;
