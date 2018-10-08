@@ -33,6 +33,12 @@ public class Dijstra
         }
     }
 
+    /*
+        Time O(V + ElgE)
+        Space O(V + E)
+        KeyPoint : we never update the value in the PriorityQueue since we have a visited set, we are guaranteed
+        the space will not exceed # of edges
+     */
     public static int dijstra(int[][] matrix)
     {
         int[][] dirs = {{0,1}, {0 , -1}, {1, 0}, {-1, 0}};
