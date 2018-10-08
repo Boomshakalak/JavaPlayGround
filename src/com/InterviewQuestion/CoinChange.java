@@ -96,7 +96,7 @@ public class CoinChange
             if (amount == 0) return 1;
             return 0;
         }
-
+        // dp[i][j] : : # of the ways of using the first i denominations to make up the amount j
         int[][] dp = new int[coins.length + 1][amount + 1];
         for (int i = 0; i <= coins.length; i++)
         {
