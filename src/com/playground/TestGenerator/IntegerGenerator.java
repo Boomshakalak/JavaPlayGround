@@ -14,7 +14,7 @@ public class IntegerGenerator
     private int lower_bound;
     private int upper_bound;
     public static final int[] TEN = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    private static IntegerGenerator DEFAULT_GENERATOR =
+    public static IntegerGenerator DEFAULT_GENERATOR =
             new IntegerGenerator(-1000 , 1001);
     public IntegerGenerator()
     {

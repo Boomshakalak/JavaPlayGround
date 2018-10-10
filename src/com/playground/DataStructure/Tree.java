@@ -114,4 +114,11 @@ public class Tree
         }
         return res;
     }
+
+    public static boolean isSameTree(TreeNode a, TreeNode b)
+    {
+        if (a == null || b == null) return a == b;
+        if (a.val != b.val) return false;
+        return isSameTree(a.left, b.left) && isSameTree(a.right, b.right);
+    }
 }

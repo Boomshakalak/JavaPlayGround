@@ -64,7 +64,7 @@ public class usingInternalLibrary {
 
     public static void testTree()
     {
-        TreeNode root = TreeGenerator.generateBalanceTreeFromArray(IntegerGenerator.TEN);
+        TreeNode root = TreeGenerator.generateBSTFromArray(IntegerGenerator.DEFAULT_GENERATOR.getArray(15));
         System.out.println(Tree.preorderTraversal(root));
         System.out.println(Tree.inorderTraversal(root)); // This should have a sorted result
         System.out.println(Tree.postOrderTraversal(root));

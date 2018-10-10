@@ -23,7 +23,7 @@ public class TreeGenerator
         return generateBalanceTreeFromArray(array, 0, sz);
     }
 
-    public static TreeNode generateBalanceTreeFromArray(int[] array)
+    private static TreeNode generateBalanceTreeFromArray(int[] array)
     {
         if (array == null) return null;
         int sz = array.length;
