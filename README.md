@@ -1,20 +1,24 @@
-**_Java Playgroud_**
 
+<h1>Java Playgroud</h1>	
+@author Zhongya Wang
 
-`@author Zhongya Wang`
+Current_Version: 0.002
+    
+`Still working on the most basic things`
 
-Current_Version: 0.001 \
-    `Still working on the most basic things`
+Currently working on
 
-This project aims for provide the most basic tools for using \
+<ul>
+<li> some more interview questions </li>
+<li> test case generators </li>
+<li> automated code tester </li>
+</ul>
+
+This project aims for provide the most basic tools for using
 Data Structure, Algorithm.
 
-It also provide functions to generate test sets and some other \
-functionalities to help debugging.
 
-If you have any suggestions or be willing to contribute \
-to this tiny projects \
-mailto: **`vistar.wang@gmail.com`**
+<a href="mailto: vistar.wang@gmail.com"> vistar.wang@gmail.com</a>
 
 
 

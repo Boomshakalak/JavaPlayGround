@@ -120,4 +120,9 @@ public class usingInternalLibrary {
         }
         System.out.println();
     }
+
+    public static void main(String[] args)
+    {
+        testBinarySearch();
+    }
 }
